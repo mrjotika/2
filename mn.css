@@ -1,0 +1,17 @@
+#sideNav {
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  right: -250px;
+  top: 0;
+  background: #009688;
+  z-index: 2;
+  transition: 0.33s;
+}
+
+
+/*set the right to 0 for class open*/
+
+#sideNav.open {
+  right: 0;
+}
