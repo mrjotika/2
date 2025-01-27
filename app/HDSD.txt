@@ -1,0 +1,39 @@
+Hệ thống tạo key cho game, apk mod 
+Các tệp đính kèm gồm source nhúng key vào game, pannel sever tạo key trên server, testkey.apk test key kết nối thực tế với sever 
+
+
+File testkey.apk để test key demo là thkr247, 
+Địa chỉ demo server tạo key https://1.thkr.fun để xem chỉ tiết cụ thể 
+Thông tin truy cập demo admin trên sever 
+user: admin password: admin123
+Reseller: demo password: admin123
+
+Cách bật tắt key khi nhúng vào game apk mod
++ Nếu bạn muốn xóa bỏ nhập key, vào /key 1 device /app/src/main/java/com/android/support/MainActivity.java
+      * Kích hoạt nhập key 
+        TechnicalAkash1.java.Init(this);
+        //Main.Start(this);
+        
+     * Xoá nhập key 
+        //TechnicalAkash1.java.Init(this);
+        Main.Start(this);
++ Để kết nối key vào game apk, trong file main.cpp tìm curl_easy_setopt(curl, CURLOPT_URL, "1.thkr.fun/connect"); thay thế 1.thkr.fun/connect bằng địa chỉ sever tạo key thật , muốn đổi tên package, tìm dòng này   Java_com_android_support_TechnicalAkash1.java_Check
+
++ Cách kết nối với các trang kiếm tiền rút gọn link tạo key tự động, ví dụ bạn có thông tin api như sau
+https://yeumoney.com/QL_api.php?token=23df354968b449926a83e4ebca380f1e40d2982dab51bb115170d810c61d93b7&format=json&url=web-can-rut-gon.com
+
+sau khi thêm vào code để tạo link nó sẽ trông như thế này 
+$link_goc = urlencode("https://1.thkr.fun/key1.php?key=$key");
+    $api_token = '23df354968b449926a83e4ebca380f1e40d2982d';
+    $api_url = "https://yeumoney.com/QL_api.php?token={$api_token}&url={$link_goc}&format=json";
+và kết quả trông như thế này https://1.thkr.fun/getkey.php
+
+//+ nếu muốn bảo trì key, vào https://1.thkr.fun/public/Server , tick vào Offline Server để ngắt truy cập game apk 
+Nếu gặp vấn đề tích hợp vào game apk hay sever, hãy nhắn qua telegram.
+tài khoản admin sẽ quản lý chính, tài khoản Reseller đành cho đối tác đại lý hoặc nguoi chơi. Password của admin không thể đổi trong demo
+Nếu ai muốn cùng chia sẻ sử dụng hệ thống sẵn có đang hoạt động này, tôi sẵn lòng chia sẻ.
+Lưu ý: hệ thống này y/c PHP 7.4
+
+Xem demo api trang tạo key tự động https://1.thkr.fun/getkey.php
+
+
